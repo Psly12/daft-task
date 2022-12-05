@@ -10,7 +10,6 @@
   "author": "Neel Salvi",
   "license": "ISC",
   "dependencies": {
-    "gzip": "^0.1.0",
     "testcafe": "^v2.0.2",
     "testcafe-reporter-html": "^1.4.6"
   },
