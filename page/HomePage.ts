@@ -1,7 +1,7 @@
 import { Selector, t } from 'testcafe';
 
 import resultsPage from './ResultsPage';
-import Constants from '../helper/constants';
+import CONSTANTS from '../helper/constants';
 
 class HomePage {
   cookieAcceptAllBtn: Selector = Selector('button[data-tracking="cc-accept"]');
@@ -37,7 +37,7 @@ class HomePage {
       .ok(`Location for search string - "${searchString}" exists`)
       .click(this.selectMenuItem(searchString))
       .expect(resultsPage.searchResultsString.exists)
-      .ok(`Results page loaded successfully with search results for ${searchString}`, { timeout: Constants.TIMEOUT_LONG });
+      .ok(`Results page loaded successfully with search results for ${searchString}`, { timeout: CONSTANTS.TIMEOUT_LONG });
     const resultInt = await resultsPage.extractResultsNumber();
     await t
       .expect(resultInt).gt(0, `${resultInt} results found for search string ${searchString}`);

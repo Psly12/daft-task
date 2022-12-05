@@ -14,8 +14,8 @@ test('Search keyword "garage" in location "Dublin (County)"', async (t) => {
   await homepage.search(searchTerm);
   await resultspage.handelBudgetModal('Close');
   await filtermodal.filterKeyword(keyword);
+  await resultspage.openResult(2);
   await t
-    .click(resultspage.resultCards)
     .expect(propertypage.description.exists)
     .ok('Property page description exists', { timeout: CONSTANTS.TIMEOUT_LONG })
     .expect(propertypage.features.exists)

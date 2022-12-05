@@ -2,7 +2,7 @@ import { Selector, t } from 'testcafe';
 
 import resultsPage from './ResultsPage';
 import { getURL } from '../helper/helper';
-import Constants from '../helper/constants';
+import CONSTANTS from '../helper/constants';
 
 class FilterModal {
   keywordsInput: Selector = Selector('input[data-testid="terms-input-text"]');
@@ -15,7 +15,7 @@ class FilterModal {
       .typeText(this.keywordsInput, keyword)
       .click(this.showResultsButton)
       .expect(getURL())
-      .contains(`terms=${keyword}`, { timeout: Constants.TIMEOUT_LONG });
+      .contains(`terms=${keyword}`, { timeout: CONSTANTS.TIMEOUT_LONG });
     const resultInt = await resultsPage.extractResultsNumber();
     await t
       .expect(resultInt).gt(0, `${resultInt} results found for filter keyword ${keyword}`);

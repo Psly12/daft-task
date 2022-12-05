@@ -26,6 +26,8 @@ Assertions are performed on the results by first checking the existence of searc
 
 Assertion for the keyword is done on the URL by matching `terms=keyword` and by looking for the keyword in a property's description and list of features. Relevent files : `FilterModal.ts` and `keyword-search.ts`.
 
+When a result is opened, the result ID is verified in the URL with the data-testid of the result card. Relevent file : `ResultsPage.ts`
+
 Try failing the test by changing the value of searchTerm or keyword variable in the `keyword-search.ts`
 
 

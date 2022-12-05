@@ -1,5 +1,8 @@
 import { Selector, t } from 'testcafe';
 
+import { getURL } from '../helper/helper';
+import CONSTANTS from '../helper/constants';
+
 class ResultsPage {
   quickLinks: Selector = Selector('div[data-testid="quick-links"]');
 
@@ -23,6 +26,19 @@ class ResultsPage {
         break;
       default:
         break;
+    }
+  }
+
+  async openResult(index:number){
+    if (index > this.resultCards.length ) {
+      const resultAttrID = await this.resultCards.nth(index).getAttribute('data-testid');
+      const resultID = Number(resultAttrID!.replace(/\D/g, '')).toString();
+      await t
+        .click(this.resultCards.nth(index))
+        .expect(getURL())
+        .contains(resultID, { timeout: CONSTANTS.TIMEOUT_LONG });
+    } else {
+      await t.expect(index).lt(this.resultCards.length, "Results selection not on the page");
     }
   }
 
