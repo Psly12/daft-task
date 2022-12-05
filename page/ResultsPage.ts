@@ -14,7 +14,7 @@ class ResultsPage {
 
   resultCards : Selector = Selector('li[data-testid^="result-"]');
 
-  async handelBudgetModal(action: string) {
+  async handleBudgetModal(action: string) {
     switch (action) {
       case 'Close':
         if (await this.closeBudgetModalButtom.exists) {
@@ -30,7 +30,8 @@ class ResultsPage {
   }
 
   async openResult(index:number){
-    if (index > this.resultCards.length ) {
+    const resultCardsCount = await this.resultCards.count
+    if (index < resultCardsCount ) {
       const resultAttrID = await this.resultCards.nth(index).getAttribute('data-testid');
       const resultID = Number(resultAttrID!.replace(/\D/g, '')).toString();
       await t
@@ -38,7 +39,7 @@ class ResultsPage {
         .expect(getURL())
         .contains(resultID, { timeout: CONSTANTS.TIMEOUT_LONG });
     } else {
-      await t.expect(index).lt(this.resultCards.length, "Results selection not on the page");
+      await t.expect(index).lt(resultCardsCount, "Results selection not on the page");
     }
   }
 

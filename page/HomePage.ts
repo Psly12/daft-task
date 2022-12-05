@@ -10,7 +10,7 @@ class HomePage {
 
   autoFillSearchItem: Selector = Selector('li[id^="search-box-item-"]');
 
-  async handelCookieModal(action:string) {
+  async handleCookieModal(action:string) {
     switch (action) {
       case 'Accept All':
         if (await this.cookieAcceptAllBtn.exists) {

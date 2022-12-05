@@ -8,11 +8,11 @@ fixture('Test keyword filter')
   .page(`${CONSTANTS.MAIN_URL}`);
 
 test('Search keyword "garage" in location "Dublin (County)"', async (t) => {
-  const searchTerm = 'Dublin (County)'; // Can be changed to any valid location
+  const searchTerm = 'Dublin (County)';
   const keyword = 'garage';
-  await homepage.handelCookieModal('Accept All');
+  await homepage.handleCookieModal('Accept All');
   await homepage.search(searchTerm);
-  await resultspage.handelBudgetModal('Close');
+  await resultspage.handleBudgetModal('Close');
   await filtermodal.filterKeyword(keyword);
   await resultspage.openResult(2);
   await t
@@ -21,8 +21,8 @@ test('Search keyword "garage" in location "Dublin (County)"', async (t) => {
     .expect(propertypage.features.exists)
     .ok('Property page features exists', { timeout: CONSTANTS.TIMEOUT_LONG });
 
-  const propertydescription = (await propertypage.description.innerText).toLowerCase();
+  const propertyDescription = (await propertypage.description.innerText).toLowerCase();
   const featureText = await propertypage.getFeatureText();
 
-  await t.expect(propertydescription.includes(keyword.toLowerCase()) || featureText.includes(keyword.toLowerCase())).ok(`Description or Features contain the keyword "${keyword}"`);
+  await t.expect(propertyDescription.includes(keyword.toLowerCase()) || featureText.includes(keyword.toLowerCase())).ok(`Description or Features contain the keyword "${keyword}"`);
 });
