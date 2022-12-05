@@ -12,6 +12,8 @@ Although only one test have been developed for now, the page objects model allow
 ## Run
 Use `npm install --force` or `yarn install` to install all the packages and then `node runner` to run the automation test.
 
+Another command that can be used to run the tests is `npx testcafe chrome ./tests/*.ts`, but this will not produce the reports not take any screenshots.
+
 The results for the test run would be in the repots directory. Screenshots are captured on test run failuer.
 
 ## Page objects
