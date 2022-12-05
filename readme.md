@@ -1,4 +1,4 @@
-# Daft Assignment
+# Daft Task
 
 A testcafe automation setup to automate keyword searching in daft.ie
 
@@ -15,7 +15,7 @@ Use `npm install --force` or `yarn install` to install all the packages and then
 The results for the test run would be in the repots directory. Screenshots are captured on test run failuer.
 
 ## Page objects
-For this assignment, daft.ie has been divided into 4 page objects, namely HomePage, PropertyPage, ResultsPage and FilterModal.
+For this task, daft.ie has been divided into 4 page objects, namely HomePage, PropertyPage, ResultsPage and FilterModal.
 
 All of these classes have the relevent elements and funtions which can be performed on th respective pages.
 
