@@ -1,0 +1,26 @@
+{
+  "name": "daft_assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "runner.js",
+  "scripts": {
+    "test": "node runner"
+  },
+  "keywords": [],
+  "author": "Neel Salvi",
+  "license": "ISC",
+  "dependencies": {
+    "gzip": "^0.1.0",
+    "testcafe": "^v2.0.2",
+    "testcafe-reporter-html": "^1.4.6"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-testcafe": "^0.2.1"
+  }
+}
