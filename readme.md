@@ -10,7 +10,7 @@ Although only one test have been developed for now, the page objects model allow
 - Chrome
 
 ## Run
-Use `npm install --force` or `yarn install` to install all the packages and then `node runner` to run the automation tests.
+Use `npm install --force` or `yarn install` to install all the packages and then `node runner` to run the automation test.
 
 The results for the test run would be in the repots directory. Screenshots are captured on test run failuer.
 
