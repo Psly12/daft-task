@@ -10,7 +10,7 @@ Although only one test has been developed for now, the page objects model allows
 - Chrome
 
 ## Run
-Use `npm install --force` or `yarn install` to install all the packages and then `node runner` to run the automation test.
+Use `npm install` or `yarn install` to install all the packages and then `node runner` to run the automation test.(MacOs may need a `--force` flag for npm)
 
 Another command that can be used to run the test is `npx testcafe chrome ./tests/*.ts`, but this will not produce the reports nor take any screenshots.
 
